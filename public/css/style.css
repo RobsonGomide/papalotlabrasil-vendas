@@ -1,0 +1,148 @@
+*{
+    position:relative;
+    max-width: 100vw;
+}
+body {
+    margin:0;
+    padding:0;
+    font-family: 'Times New Roman';
+    font-size: 16px;
+}
+main {
+    position: absolute;
+    left:0;
+    top: 0;
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+}
+.Topo {
+    background-image:linear-gradient(to right, #1D5632, #2C6831, #3E7E30); 
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    height: 60px;
+    line-height: 60px;
+    align-items: center;
+}
+.TopoEsquerda {
+    width:130px;
+    height:60px;
+    margin-left:20px;
+}
+.TopoEsquerda .Logo img {
+    width:108px;
+    height:36px;
+}
+
+.TopoDireita {
+    display:flex;
+    justify-content: start;
+    width:250px;
+    height:60px;
+    margin-right:20px;
+}
+.TopoDireita .Idioma {
+    width:150px;
+    height:60px;
+    line-height:60px;
+}
+.TopoDireita .Idioma .Bandeira {
+    width:40px;
+    height:32px;
+    margin-left:2px;
+}
+.TopoDireita > .Idioma > .Bandeira > img {
+    width:40px;
+    height:32px;
+    /* border:1px solid rgba(255,255,255,0.5); */
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right:5px;
+}
+.TopoDireita > .Idioma > .Bandeira.Selecionado > img {
+    width:40px;
+    height:32px;
+    border:2px solid rgba(255,255,255,0.8);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right:5px;
+}
+.Menu {
+    width:35px;
+    height:60px;
+    text-align:end;
+    left: calc(100vw - 80px);
+}
+.Menu .Menu-FakeTrigger {
+    position: absolute;
+    z-index:1000;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    cursor: pointer;
+    margin-left:-35px;
+    margin-top:12px;
+}
+.Menu .Menu-Lines {
+    position: absolute;
+    z-index: 999;
+    width:35px;
+    height:35px;
+    margin-top:12px;
+}
+.Menu .Menu-Lines span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all ease .2s;
+}
+.Menu .Menu-FakeTrigger:checked~.Menu-Lines span {
+    background-color: #1D5632;
+}
+.Menu .Menu-FakeTrigger:checked~.Menu-Lines span:nth-child(1) {
+    transform-origin: 0% 100%;
+    transform: rotate(50deg) scaleX(1.20);
+}
+.Menu .Menu-FakeTrigger:checked~.Menu-Lines span:nth-child(2) {
+    opacity: 0;
+}
+.Menu .Menu-FakeTrigger:checked~.Menu-Lines span:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg) scaleX(1.20);
+}
+.Menu ul {
+    position: absolute;
+    z-index: 998;
+    left:-110px;
+    top: 60px;
+    width: 150px;
+    height:auto;
+    background-color: #ededed;
+    margin-top: -300px;
+    transition: all ease .2s;
+    text-align:left;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, 
+                rgba(0, 0, 0, 0.22) 0px 15px 12px;}
+.Menu .Menu-FakeTrigger:checked ~ul {
+    margin-top: 0;
+}
+.Menu ul li {
+    padding-top: 10px;
+    list-style-type:none;
+    margin-left:-30px;
+}
+.Menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 22px;
+    transition: all ease .3s;
+}
+.Menu ul li a: hover {
+    color: #999;
+}
